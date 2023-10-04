@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 20px 20px;
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.text {
+    position: absolute;
+    padding-left: 30px;
+    color: blanchedalmond;
+    top: 70px;
+    max-width: 700px;
+   
+}
+
+.text h6 {
+    color: red;
+    
+
+}
+
+.text h1 {
+    font-weight: 700;
+}
+
+/*
+@media only screen and (max-width: 900px) {
+    .image {
+        padding: 0 20px;
+        top: 30px;
+    }
+}
+@media only screen and (max-width:700px){
+    .image {
+        padding: 0 10px;
+        top: px;
+    }
+    .text {
+        overflow: hidden;
+        flex-wrap: nowrap;
+    }
+}
+*/
+
+@media only screen and (max-width:700px) {
+
+    .text{
+        flex-wrap: wrap;
+        position: absolute;
+        top: 10px;
+        max-width: 100%;
+        overflow:scroll;
+        font-size: 19px;
+        font-size: 1vw;
+
+    }
+}
+@media only screen and (min-width:700px) {
+
+    .text{
+        flex-wrap: wrap;
+        position: absolute;
+        top: 70px;
+        max-width: 100%;
+        font-size: 15px;
+        font-size: 1vw;
+        visibility:hidden;
+    }
+}
+
+@media only screen and (max-width:400px) {
+
+    .text{
+        overflow: hidden;
+        flex-wrap: wrap;
+        position: fixed;
+        top: 30px;
+        font-weight: 100;
+        font-size: 16px;
+        visibility: hidden;
+        font-size: 1vw;
+
+
+    }
+    .text p, h6{
+
+    }
+    .text .heading1{
+        top: 30px;
+        visibility: visible;
+        font-size: 6vw
+        
+    }
+}
+
+@media only screen and (max-width:500px) {
+.text p, h6{
+    font-size: 1vw;
+    visibility: hidden;
+}    
+
+}
+@media only screen and (min-width:400px){
+.text{
+    visibility:visible;
+    font-size: 1vw;
+
+
+}
+
+.text h1{
+    visibility: visible;
+    
+}
+
+}
+    
+
+
+.btn1 {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+
+}
+@media only screen and (max-width:700px) 
+{
+    .sorting1{
+        padding-top: 5px;
+        width:50vw;
+        row-gap: 3px;
+        margin: 4px;
+
+    }
+}
+
+.search1{
+    flex-direction: column;
+    font-weight: bolder;
+    font-size: medium;
+    margin-top: 10px;
+   margin-left: 20px;
+}
+.input-group{
+    margin-left: 20px;
+}
+.btn-block {
+    background-color: rgb(44, 162, 72);
+    color: white;
+}
+
+
+
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+   
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-whatsapp {
+    background: #57ee55;
+    color: white;
+  }
+  .fa-github {
+    background:black;
+    color: white;
+  }
+  .fa-instagram {
+    background:rgb(202, 23, 77);
+    color: white;
+  }
+  .fa-youtube {
+    background:red;
+    color: white;
+  }
+  .socialicon{
+    display: flex;
+    justify-content:space-around;
+    width:400px;
+  }
+  .socialicon .icon1, .icon2, .icon3, .icon4, .icon5{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+  }
+
+  #box{
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar {
+    width: 20%;
+    padding: 20px;
+}
+
+#recipeCards{
+    width: 75%;
+}
+
+
+  card{
+    width: 305px;
+    /* width: 415px; */
+    height: 350px;
+    /* height: 400px; */
+    flex-shrink: 0;
+    border-radius: 16px;
+    box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
+    border: none;
+}
+
+.card > img{
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.card-body .type{
+    color: #A1A1A1;
+    font-size: 14px;
+    line-height: 24px; /* 240% */
+}
+
+.card-body > .recipe-info .name{
+    color: #252525;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.card-body > .recipe-info .rating{
+    color: #A1A1A1;
+}
+
+.card-body > .del-time .time{
+    color: #DC582A;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 136.523%;
+}
+
+.card-body > .del-time > .like-com span > i{
+    width: 22px;
+    height: 22px;
+    color:red;
+    outline: red;
+}
+.card-body > .del-time > .like-com button{
+    border: none;
+    color: red;
+    outline: red;
+    background-color: white;
+
+}
