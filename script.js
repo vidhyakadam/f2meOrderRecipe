@@ -38,37 +38,129 @@ document.addEventListener('DOMContentLoaded', function () {
 //search butoon functaniloty
 
 //all, veg and nonveg button filters
-    const All = document.getElementById('all');
-    const Veg = document.getElementById('veg');
-    const nonVeg = document.getElementById('non-veg');
+const All = document.getElementById('all');
+const Veg = document.getElementById('veg');
+const nonVeg = document.getElementById('non-veg');
+const searchBox = document.getElementById('searchInput')
+const searchIcon = document.getElementById('searchBtn')
+const searchResult = document.getElementById('recipeCards')
 
-    All.addEventListener("click", () => {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.style.display = 'flex';
-        });
+
+/*
+    let keyword = "";
+    let page = 1;
+
+    async function searchImages(){
+        keyword = searchBox.value;
+        const url = 
+         
+    }
+*/
+
+//---------------------------- Function to filter recipes by name ---------------------------//
+function filterRecipesByName(searchQuery) {
+    // Get all recipe cards
+    const recipeCards = document.querySelectorAll(".card");
+
+    recipeCards.forEach((card) => {
+        const name = card.querySelector(".name").textContent.toLowerCase();
+        if (name.includes(searchQuery.toLowerCase())) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
     });
+}
 
-    // Simulate a click on the "All" button when the page loads
-    All.click();
+//------------------------------- Function to clear search results and display all cards------------------------------------------//
+function clearSearchResults() {
 
-    Veg.addEventListener("click", () => {
-        const cards = document.querySelectorAll('.card');
+    document.getElementById("searchInput").value = "";
 
-        cards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            const show = category === 'veg';
-            card.style.display = show ? 'flex' : 'none';
-        });
+    filterRecipesByName("");
+}
+
+//----------------------------- Add an event listener to the search button ---------------------------//
+const searchBtn = document.getElementById("button-addon2");
+
+searchBtn.addEventListener("click", function () {
+
+    const searchQuery = document.getElementById("searchInput").value.trim();
+
+    filterRecipesByName(searchQuery);
+});
+
+document.getElementById("searchInput").addEventListener("input", function () {
+
+    const searchQuery = this.value.trim();
+
+    if (searchQuery === "") {
+        clearSearchResults();
+    }
+});
+
+//--------------------------------- Function to filter recipes by rating ------------------------------- //
+function filterRecipesByRating(above4, below4) {
+
+    const recipeCards = document.querySelectorAll(".card");
+
+    recipeCards.forEach((card) => {
+        const rating = parseFloat(card.getAttribute("data-rating"));
+
+        if ((above4 && rating >= 4) || (below4 && rating < 4)) {
+            card.style.display = "flex";
+        } else if (!above4 && !below4) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
     });
+}
 
-    nonVeg.addEventListener("click", () => {
-        const cards = document.querySelectorAll('.card');
+document.getElementById("4andabove").addEventListener("change", function () {
 
-        cards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            const show = category === 'non-veg';
-            card.style.display = show ? 'flex' : 'none';
-        });
+    const above4 = this.checked;
+
+    const below4 = document.getElementById("below4").checked;
+
+    filterRecipesByRating(above4, below4);
+});
+
+document.getElementById("below4").addEventListener("change", function () {
+
+    const above4 = document.getElementById("4andabove").checked;
+
+    const below4 = this.checked;
+
+    filterRecipesByRating(above4, below4);
+});
+All.addEventListener("click", () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.style.display = 'flex';
     });
+});
+
+// Simulate a click on the "All" button when the page loads
+All.click();
+
+Veg.addEventListener("click", () => {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const show = category === 'veg';
+        card.style.display = show ? 'flex' : 'none';
+    });
+});
+
+nonVeg.addEventListener("click", () => {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const show = category === 'non-veg';
+        card.style.display = show ? 'flex' : 'none';
+    });
+});
 
