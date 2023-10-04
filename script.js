@@ -35,12 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-
-
-
 //all, veg and nonveg button filters
-
     const All = document.getElementById('all');
     const Veg = document.getElementById('veg');
     const nonVeg = document.getElementById('non-veg');
