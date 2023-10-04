@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     All.addEventListener("click", () => {
         const cards = document.querySelectorAll('.card');
-
         cards.forEach(card => {
             card.style.display = 'flex';
         });

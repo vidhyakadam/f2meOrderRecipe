@@ -26,89 +26,92 @@
 
     <body>
 
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="Cookpal 1.png" alt="cookpal logo" width="96"
+                            height="46"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="Cookpal 1.png" alt="cookpal logo" width="96" height="46"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <a class="navbar-brand" href="#"><img src="Cookpal 1.png" alt="cookpal logo" width="96"
-                                height="46"></a>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav gap-3 justify-content-end flex-grow-1 pe-5">
-                            <li class="nav-item">
-                                <a class="nav-link text-black fw-semibold" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-black fw-semibold" href="#">Explore</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-black fw-semibold" href="#">Help</a>
-                            </li>
-                        </ul>
-                        <img src="Profile (1).png" alt="user logo">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <a class="navbar-brand" href="#"><img src="Cookpal 1.png" alt="cookpal logo" width="96"
+                                    height="46"></a>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav gap-3 justify-content-end flex-grow-1 pe-5">
+                                <li class="nav-item">
+                                    <a class="nav-link text-black fw-semibold" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-black fw-semibold" href="#">Explore</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-black fw-semibold" href="#">Help</a>
+                                </li>
+                            </ul>
+                            <img src="Profile (1).png" alt="user logo">
+                        </div>
                     </div>
                 </div>
+            </nav>
+            <!---navbar-->
+            <!---image-->
+            <div class="image container-fluid mx-3">
+                <div class="text-white">
+                    <h6 class="mb-3 ">Trending Now</h6>
+                    <h1 class="mb-3  heading1">Mikes's famous salad</h1>
+                    <h1 class="mb-3 heading1">with cheese</h1>
+                    <p class="mb-3">By John Mike</p>
+                </div>
             </div>
-        </nav>
-        <!---navbar-->
-        <!---image-->
-        <div class="image container-fluid mx-3">
-            <div class="text-white">
-                <h6 class="mb-3 ">Trending Now</h6>
-                <h1 class="mb-3  heading1">Mikes's famous salad</h1>
-                <h1 class="mb-3 heading1">with cheese</h1>
-                <p class="mb-3">By John Mike</p>
-            </div>
-        </div>
-        <!---image-->
+            <!---image-->
 
-        <div class="search1 container-fluid">
-            <h3>Search for Recipes</h3>
-        </div>
-        <div class="input-group mb-3 container-fluid">
-            <input type="text" class="form-control" placeholder="Search for food" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <i class="fa fa-search"></i></button>
-        </div>
-        <div class="btn1 container-fluid flex-wrap ">
-            <button type="button" class="btn btn-success sorting1" id="all">All Recipies</button>
-            <button type="button" class="btn btn-warning sorting1" id="veg">Veg Recipes Only</button>
-            <button type="button" class="btn btn-danger sorting1" id="non-veg">Non Veg Recipes</button>
-        </div>
-        <!--- filter section-->
-        <section id="box" class="my-5">
-            <div class="sidebar">
-                <div class="filter p-2 mb-1">
-                    <h3 class="fw-bold">Filters</h3>
-                </div>
-                <div class="rating-filter">
-                    <h5 class="fw-semibold mb-3">Rating</h5>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="4andabove">
-                        <label class="form-check-label" for="4andabove">
-                            4 and Above
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="below4">
-                        <label class="form-check-label" for="below4">
-                            Below 4
-                        </label>
-                    </div>
-                </div>
+            <div class="search1 container-fluid">
+                <h3>Search for Recipes</h3>
             </div>
-            <div id="recipeCards" class="d-flex justify-content-center flex-wrap gap-4">
-                <!-- <div class="card p-2">
+            <div class="input-group mb-3 container-fluid">
+                <input type="text" class="form-control" placeholder="Search for food" aria-label="Recipient's username"
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                    <i class="fa fa-search"></i></button>
+            </div>
+            <div class="btn1 container-fluid flex-wrap ">
+                <button type="button" class="btn btn-success sorting1" id="all">All Recipies</button>
+                <button type="button" class="btn btn-warning sorting1" id="veg">Veg Recipes Only</button>
+                <button type="button" class="btn btn-danger sorting1" id="non-veg">Non Veg Recipes</button>
+            </div>
+            <!--- filter section-->
+            <section id="box" class="my-5">
+                <div class="sidebar">
+                    <div class="filter p-2 mb-1">
+                        <h3 class="fw-bold">Filters</h3>
+                    </div>
+                    <div class="rating-filter">
+                        <h5 class="fw-semibold mb-3">Rating</h5>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="4andabove">
+                            <label class="form-check-label" for="4andabove">
+                                4 and Above
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="below4">
+                            <label class="form-check-label" for="below4">
+                                Below 4
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="recipeCards" class="d-flex justify-content-center flex-wrap gap-4">
+                    <!-- <div class="card p-2">
                     <img src="https://source.unsplash.com/random?chicken" class="recipe-img" alt="img">
                     <div class="card-body">
                         <span class="type">Veg</span>
@@ -129,130 +132,130 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
-        </section>
-
-        <!---footer section-->
-        <footer class="text-center text-lg-start border border-white mt-xl-5 pt-4">
-            <!-- Grid container -->
-            <div class="container p-4">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-4">
-                            <img src="Cookpal 1.png" alt="">
-                        </h5>
-                        <p>Coockpal is a recipe website with a <br>
-                            wide variety of delicious recipes, <br>
-                            easy-to-use search function. Join <br>
-                            our community and let's cook <br>
-                            together!</p>
-
-                        <ul class="list-unstyled mb-4">
-                            <li>
-                                <a href="#!" class="text-white">About us</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Collections</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Environmental philosophy</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Artist collaborations</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase-bold mb-4">Company</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!" class="text-red">Home</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-red">Explore</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-red">Team</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-red">About us</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-red">Activity</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase-bold mb-4">Resources</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#" class="text-red">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-red">Use Cases</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-red">Testimonials</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-red">Insights</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-4">
-                            <img src="Cookpal 1.png" alt="">
-                        </h5>
-                        <p>Ut risus mattis interdum faucibus facilisi. Facilisi purus <br>
-                            accumsan aliquaum</p>
-
-                        <div class="form-outline form-white mb-4">
-                            <input type="email" id="form5Example2" class="form-control" />
-                            <label class="form-label" for="form5Example2">Email address</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-outline-red btn-block">Subscribe</button>
-                    </div>
-                    <!--Grid column-->
                 </div>
-                <!--Grid row-->
-            </div>
-            <!-- Grid container -->
-            <div class="container d-flex socialicon">
+            </section>
 
-                <i class="fa-brands fa-square-twitter icon1"></i>
-                <i class="fa-brands fa-square-instagram icon2"></i>
-                <i class="fa-brands fa-square-whatsapp icon3"></i>
-                <i class="fa-brands fa-square-github icon4"></i>
-                <i class="fa-brands fa-square-youtube icon5"></i>
+            <!---footer section-->
+            <footer class="text-center text-lg-start border border-white mt-xl-5 pt-4">
+                <!-- Grid container -->
+                <div class="container p-4">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h5 class="text-uppercase mb-4">
+                                <img src="Cookpal 1.png" alt="">
+                            </h5>
+                            <p>Coockpal is a recipe website with a <br>
+                                wide variety of delicious recipes, <br>
+                                easy-to-use search function. Join <br>
+                                our community and let's cook <br>
+                                together!</p>
 
-            </div>
-            <!-- Copyright -->
-            <div class="text-center p-3 border-top border-white">
-                © 2020 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- End of .container -->
+                            <ul class="list-unstyled mb-4">
+                                <li>
+                                    <a href="#!" class="text-white">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Collections</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Environmental philosophy</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Artist collaborations</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h5 class="text-uppercase-bold mb-4">Company</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#!" class="text-red">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-red">Explore</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-red">Team</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-red">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-red">Activity</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h5 class="text-uppercase-bold mb-4">Resources</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" class="text-red">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-red">Use Cases</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-red">Testimonials</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-red">Insights</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h5 class="text-uppercase mb-4">
+                                <img src="Cookpal 1.png" alt="">
+                            </h5>
+                            <p>Ut risus mattis interdum faucibus facilisi. Facilisi purus <br>
+                                accumsan aliquaum</p>
+
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example2" class="form-control" />
+                                <label class="form-label" for="form5Example2">Email address</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-red btn-block">Subscribe</button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Grid container -->
+                <div class="container d-flex socialicon">
+
+                    <i class="fa-brands fa-square-twitter icon1"></i>
+                    <i class="fa-brands fa-square-instagram icon2"></i>
+                    <i class="fa-brands fa-square-whatsapp icon3"></i>
+                    <i class="fa-brands fa-square-github icon4"></i>
+                    <i class="fa-brands fa-square-youtube icon5"></i>
+
+                </div>
+                <!-- Copyright -->
+                <div class="text-center p-3 border-top border-white">
+                    © 2020 Copyright:
+                    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- End of .container -->
 
 
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+            <script src="script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
     </body>
 
     </html>
