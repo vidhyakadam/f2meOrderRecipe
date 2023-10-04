@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+//search butoon functaniloty
+
 //all, veg and nonveg button filters
     const All = document.getElementById('all');
     const Veg = document.getElementById('veg');
