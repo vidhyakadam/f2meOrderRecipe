@@ -81,7 +81,7 @@
     },
     {
         "name": "Paneer Tikka",
-        "imageSrc": "https://source.unsplash.com/random?paneer",
+        "imageSrc": "https://source.unsplash.com/random?paneerTikka",
         "time": "40 min",
         "type": "veg",
         "isLiked": false,
@@ -96,14 +96,6 @@
         "rating": 4.6
     },
     {
-        "name": "Chicken Salad",
-        "imageSrc": "https://source.unsplash.com/random?chicken-salad",
-        "time": "60 min",
-        "type": "non-veg",
-        "isLiked": false,
-        "rating": 4.6
-    },
-    {
         "name": "Caesar Salad",
         "imageSrc": "https://source.unsplash.com/random?caesarSalad",
         "time": "25 min",
@@ -113,7 +105,7 @@
     },
     {
         "name": "Fish Tacos",
-        "imageSrc": "https://source.unsplash.com/random?fish-food",
+        "imageSrc": "https://source.unsplash.com/random?fishTacos",
         "time": "35 min",
         "type": "non-veg",
         "isLiked": false,

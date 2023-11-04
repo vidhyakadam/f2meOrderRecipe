@@ -1,12 +1,23 @@
+function likefunc(e) {
+    e = e.split(" ").join("_");
+    let result = document.getElementById(`${"like-button-" + e}`);
+    if (result.style.color == "black") {
+        result.style.color = "red";
+    } else {
+        result.style.color = "black";
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    // fetching data from json file
+
+    //---------------------------------- fetching data from json file------------------------------//
     fetch('./data.json').then((data) => {
         return data.json();
     }).then((completedata) => {
         let data1 = "";
         completedata.map((val) => {
-            data1 += `<div class="card p-2" data-category="${val.type}">
-        <img src=${val.imageSrc} class="recipe-img" alt="img">
+            data1 += `<div class="card p-2" data-category="${val.type}" data-rating="${val.rating}">
+                <img src=${val.imageSrc} class="recipe-img" alt="img">
                     <div class="card-body">
                         <span class="type">${val.type}</span>
 
@@ -19,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <h5 class="time">${val.time}</h5>
                             
                             <div class="like-com">
-                                <button id="likebtn" class="liked"><i class="fa-regular fa-heart fa-lg" style="color: #000000;"></i></button>
+                                <button id="likebtn" class="liked" onclick="likefunc('${val.name}')"><i id="${`like-button-` + val.name.split(" ").join("_")}" class="fa-regular fa-heart fa-lg like-btn" style="color:black" ></i></button>
 
                                 <span class="comment"><i class="fa-regular fa-comment fa-lg" style="color: #000000;"></i></span>
                             </div>
@@ -33,134 +44,127 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(err);
     });
 
-});
+    //---------------------------- Function to filter recipes by name ---------------------------//
+    function filterRecipesByName(searchQuery) {
+        // Get all recipe cards
+        const recipeCards = document.querySelectorAll(".card");
 
-//search butoon functaniloty
-
-//all, veg and nonveg button filters
-const All = document.getElementById('all');
-const Veg = document.getElementById('veg');
-const nonVeg = document.getElementById('non-veg');
-const searchBox = document.getElementById('searchInput')
-const searchIcon = document.getElementById('searchBtn')
-const searchResult = document.getElementById('recipeCards')
-
-
-/*
-    let keyword = "";
-    let page = 1;
-
-    async function searchImages(){
-        keyword = searchBox.value;
-        const url = 
-         
+        recipeCards.forEach((card) => {
+            const name = card.querySelector(".name").textContent.toLowerCase();
+            if (name.includes(searchQuery.toLowerCase())) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
     }
-*/
 
-//---------------------------- Function to filter recipes by name ---------------------------//
-function filterRecipesByName(searchQuery) {
-    // Get all recipe cards
-    const recipeCards = document.querySelectorAll(".card");
+    //------------------------------- Function to clear search results and display all cards------------------------------------------//
+    function clearSearchResults() {
 
-    recipeCards.forEach((card) => {
-        const name = card.querySelector(".name").textContent.toLowerCase();
-        if (name.includes(searchQuery.toLowerCase())) {
-            card.style.display = "flex";
-        } else {
-            card.style.display = "none";
+        document.getElementById("searchInput").value = "";
+
+        filterRecipesByName("");
+    }
+
+    //----------------------------- Add an event listener to the search button ---------------------------//
+    const searchBar = document.getElementById("searchInput");
+
+    searchBar.addEventListener("keyup", function () {
+        const searchQuery = document.getElementById("searchInput").value.trim();
+
+        filterRecipesByName(searchQuery);
+    });
+
+    const searchBtn = document.getElementById("button-addon2");
+
+    searchBtn.addEventListener("keyup", function () {
+
+        const searchQuery = document.getElementById("searchInput").value.trim();
+
+        filterRecipesByName(searchQuery);
+    });
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+
+        const searchQuery = this.value.trim();
+
+        if (searchQuery === "") {
+            clearSearchResults();
         }
     });
-}
 
-//------------------------------- Function to clear search results and display all cards------------------------------------------//
-function clearSearchResults() {
 
-    document.getElementById("searchInput").value = "";
+    //------------------------------------- all, veg and nonveg button filters ----------------------------------------//
 
-    filterRecipesByName("");
-}
+    const All = document.getElementById('all');
+    const Veg = document.getElementById('veg');
+    const nonVeg = document.getElementById('non-veg');
 
-//----------------------------- Add an event listener to the search button ---------------------------//
-const searchBtn = document.getElementById("button-addon2");
+    All.addEventListener("click", () => {
+        const cards = document.querySelectorAll('.card');
 
-searchBtn.addEventListener("click", function () {
+        cards.forEach(card => {
+            card.style.display = 'flex';
+        });
+    });
 
-    const searchQuery = document.getElementById("searchInput").value.trim();
+    All.click();
 
-    filterRecipesByName(searchQuery);
-});
+    Veg.addEventListener("click", () => {
+        const cards = document.querySelectorAll('.card');
 
-document.getElementById("searchInput").addEventListener("input", function () {
+        cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            const show = category === 'veg';
+            card.style.display = show ? 'flex' : 'none';
+        });
+    });
 
-    const searchQuery = this.value.trim();
+    nonVeg.addEventListener("click", () => {
+        const cards = document.querySelectorAll('.card');
 
-    if (searchQuery === "") {
-        clearSearchResults();
+        cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            const show = category === 'non-veg';
+            card.style.display = show ? 'flex' : 'none';
+        });
+    });
+
+    //--------------------------------- Function to filter recipes by rating ------------------------------- //
+    function filterRecipesByRating(above4, below4) {
+
+        const recipeCards = document.querySelectorAll(".card");
+
+        recipeCards.forEach((card) => {
+            const rating = parseFloat(card.getAttribute("data-rating"));
+
+            if ((above4 && rating >= 4) || (below4 && rating < 4)) {
+                card.style.display = "flex";
+            } else if (!above4 && !below4) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
     }
-});
 
-//--------------------------------- Function to filter recipes by rating ------------------------------- //
-function filterRecipesByRating(above4, below4) {
+    document.getElementById("4andabove").addEventListener("change", function () {
 
-    const recipeCards = document.querySelectorAll(".card");
+        const above4 = this.checked;
 
-    recipeCards.forEach((card) => {
-        const rating = parseFloat(card.getAttribute("data-rating"));
+        const below4 = document.getElementById("below4").checked;
 
-        if ((above4 && rating >= 4) || (below4 && rating < 4)) {
-            card.style.display = "flex";
-        } else if (!above4 && !below4) {
-            card.style.display = "flex";
-        } else {
-            card.style.display = "none";
-        }
+        filterRecipesByRating(above4, below4);
     });
-}
 
-document.getElementById("4andabove").addEventListener("change", function () {
+    document.getElementById("below4").addEventListener("change", function () {
 
-    const above4 = this.checked;
+        const above4 = document.getElementById("4andabove").checked;
 
-    const below4 = document.getElementById("below4").checked;
+        const below4 = this.checked;
 
-    filterRecipesByRating(above4, below4);
-});
-
-document.getElementById("below4").addEventListener("change", function () {
-
-    const above4 = document.getElementById("4andabove").checked;
-
-    const below4 = this.checked;
-
-    filterRecipesByRating(above4, below4);
-});
-All.addEventListener("click", () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.style.display = 'flex';
+        filterRecipesByRating(above4, below4);
     });
+
 });
-
-// Simulate a click on the "All" button when the page loads
-All.click();
-
-Veg.addEventListener("click", () => {
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const show = category === 'veg';
-        card.style.display = show ? 'flex' : 'none';
-    });
-});
-
-nonVeg.addEventListener("click", () => {
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const show = category === 'non-veg';
-        card.style.display = show ? 'flex' : 'none';
-    });
-});
-

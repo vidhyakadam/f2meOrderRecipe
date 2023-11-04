@@ -1,164 +1,131 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
     margin: 0;
     padding: 0;
-    font-family: "futura md bt";
-    text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
 }
 
-body {
-    background-color: #fff;
+.main{
+    margin: 0 80px;
 }
 
-.image{
+.container-fluid{
+    padding: 0;
+}
+
+.form-check-input:checked{
+    background-color: #509E2F;
+    border-color: #509E2F;
+    color: #ffffff;
+}
+
+.form-check-input:focus{
+    box-shadow: 0 0 0 0.25rem #509e2f4f;
+}
+
+.form-control:focus {
+    border-color: #509E2F;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #509e2f4f;
+}
+
+/* navbar css */
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    color: #253D4E;
+    transition: all 0.2s ease-out;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover{
+    color: #509E2F;
+}
+
+
+/* banner css */
+
+#banner{
     height: 380px;
     border-radius: 30px;
-    background: linear-gradient(90deg, #252525 -16.65%, rgba(0, 0, 0, 0.00) 100%), url(Rectangle\ 20\ \(1\).png), lightgray 50%;
+    background: linear-gradient(90deg, #252525 -16.65%, rgba(0, 0, 0, 0.00) 100%), url(./assets/banner.jpeg), lightgray 50%;
     background-position: center;
     background-size: cover;
     padding: 5vw;
     margin: 40px 0;
 }
 
-
-.btn1 {
-    width: 80%;
-    display: flex;
-    margin: 10px;
-   
-}
-.sorting1{
-    width: 22%;
-    margin: 10px;
-}
-@media only screen and (max-width:700px) 
-{
-    .sorting1{
-        padding-top: 5px;
-        width:50vw;
-        row-gap: 3px;
-        margin: 4px;
-
-    }
+.content > p:first-child{
+    color: #DC582A;;
 }
 
-.search1{
-    flex-direction: column;
-    font-weight: bolder;
-    font-size: medium;
-    margin-top: 10px;
-   margin-left: 20px;
-}
-.input-group{
-    margin-left: 20px;
-}
-.btn-block {
-    background-color: rgb(44, 162, 72);
-    color: white;
+/* search box css */
+
+#search-box > .search{
+    background: #F3F3F3;
 }
 
+#search-box > .search > input{
+    background: transparent;
+    border: none;
+}
 
+#search-box > .search > input:focus{
+    box-shadow: none;
+}
 
+#search-box > .search > .searchBtn{
+    width: 80px;
+    height: 65px;
+    border: none;
+    color: #fff;
+    background-color: #509E2F;
+}
 
-/* Style all font awesome icons */
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-/* Add a hover effect if you want */
-.fa:hover {
-    opacity: 0.7;
-  }
-  
-  /* Set a specific color for each brand */
-  
-  /* Facebook */
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-   
-  }
-  
-  /* Twitter */
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-  .fa-whatsapp {
-    background: #57ee55;
-    color: white;
-  }
-  .fa-github {
-    background:black;
-    color: white;
-  }
-  .fa-instagram {
-    background:rgb(202, 23, 77);
-    color: white;
-  }
-  .fa-youtube {
-    background:red;
-    color: white;
-  }
-  .socialicon{
-    display: flex;
-    justify-content:space-around;
-    width:400px;
-  }
-  .socialicon .icon1, .icon2, .icon3, .icon4, .icon5{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    font-size: 50px;
-  }
+#search-box > .search > .searchBtn:hover{
+    background-color: #438d23;
+}
 
-  #box{
+#box{
     display: flex;
     justify-content: space-between;
 }
 .sidebar {
     width: 20%;
-    padding: 5px;
-    display: block;
-    margin-left:auto ;
-
 }
 
 #recipeCards{
     width: 75%;
+    transition: all 0.5s ease-in-out;
 }
 
+/* CARDS CSS */
 
-  card{
-    width: 305px;
-    /* width: 415px; */
-    height: 350px;
-    /* height: 400px; */
+.card{
+    width: 290px;
+    height: 330px;
     flex-shrink: 0;
+    /* flex-grow: 1; */
     border-radius: 16px;
     box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
     border: none;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+      0 24px 46px rgba(220, 233, 255, 0.48);;
 }
 
 .card > img{
-    height: 200px;
+    min-height: 200px;
     object-fit: cover;
     border-radius: 16px;
 }
+
 
 .card-body .type{
     color: #A1A1A1;
@@ -188,13 +155,118 @@ body {
 .card-body > .del-time > .like-com span > i{
     width: 22px;
     height: 22px;
-    color:red;
-    outline: red;
 }
 .card-body > .del-time > .like-com button{
     border: none;
-    color: red;
-    outline: red;
-    background-color: white;
-
+    background-color: transparent;
 }
+
+/* footer css */
+
+#footer h5{
+    color: #253D4E;
+}
+
+#footer a{
+    color: rgba(0, 0, 0, 0.60);
+}
+
+.socialicon{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+  }
+
+  .socialicon > .icon1, .icon2, .icon3, .icon4, .icon5{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  @media (max-width: 355.98px) {
+    .main {
+        margin: 0 15px !important;
+    }
+  } 
+
+  /* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .main {
+        margin: 0 40px;
+    }
+
+    .card {
+        flex-grow: 1 !important;
+        height: 400px;
+    }
+
+    .card > img {
+        height: 253px;
+    }
+ }
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+
+    .card {
+        width: 250px;
+        height: 400px;
+        flex-grow: 1 !important;
+    }
+
+    .card > img {
+        height: 253px;
+    }
+ }
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    #box {
+        display: block;
+    }
+
+    .sidebar,
+    #recipeCards {
+        width: 100%;
+    }
+
+    .sidebar > .filter {
+        display: none;
+    }
+    
+    .card {
+        flex-grow: 1 !important;
+    }
+
+    .sidebar > .rating-filter > .filter-box {
+        display: flex;
+        gap: 20px;
+    }
+
+    .user-profile-img{
+        position: absolute;
+        top: 25px;
+        left: 75%;
+    }
+ }
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .card {
+        flex-grow: 0;
+    }
+
+    .box-1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .box-2,.box-3,.box-4 {
+        display: none;
+    }
+ }
